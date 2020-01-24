@@ -1,0 +1,33 @@
+&nbsp;
+<div class="container">
+    <div class="heading">
+        Hello! Locate Your City
+    </div>
+    &nbsp;&nbsp;
+    <div class="col-lg-12">
+        <div ngbDropdown class="d-inline-block stateDropdown">
+            <button class="btn btn-outline-primary stateButton" id="dropdownBasic1" ngbDropdownToggle><span *ngIf="labelState==null">Select State</span>
+            <span *ngIf="labelState!=null">{{labelState}}</span></button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="stateMenu">
+              <button ngbDropdownItem *ngFor="let state of states" (click)="getCities(this.state)">{{state}}</button>
+            </div>
+          </div>
+    </div>
+    &nbsp;&nbsp;
+    <div class="col-lg-12 row">
+        <div class="col-md-12 col-lg-6">
+            <div ngbDropdown class="d-inline-block stateDropdown">
+                <button class="btn btn-outline-primary stateButton" id="dropdownBasic1" ngbDropdownToggle><span *ngIf="labelCity==null">Select City</span>
+                  <span *ngIf="labelCity!=null">{{labelCity}}</span></button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="stateMenu">
+                    <button ngbDropdownItem *ngFor="let city of cities" (click)="setCity(this.city)">{{city.name}}</button>
+                </div>
+              </div>
+    </div>
+    <div class="col-md-12 col-lg-6">
+      <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" _updatePosition=abc($event)>
+        <agm-marker [latitude]="latitude" [longitude]="longitude" *ngIf="labelCity!=null"></agm-marker>
+      </agm-map>
+    </div>
+</div>
+</div>
