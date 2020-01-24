@@ -2,9 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
+## Startup Commands
+
+Run `npm install` to download all the dependencies 
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Brief Description
+
+Service named `get-cities-service` is created to subscribe to the API call and get response. Very basic html design is created and agm-map Component is imported from `agm/core` and downloaded using npm. A data set in JSON format with city names and respective latitude and longitude is used to dynamically change the marker on the map. For further details and queries contact `jass.singh0026@gmail.com`.
 
 ## Code scaffolding
 
